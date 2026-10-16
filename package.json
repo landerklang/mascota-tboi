@@ -1,0 +1,23 @@
+{
+  "name": "my-pet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "build:node": "tsc -p tsconfig.node.json",
+    "build:web": "tsc -p tsconfig.web.json",
+    "copy:assets": "node copy-assets.js",
+    "build": "npm run build:node && npm run build:web && npm run copy:assets",
+    "start": "npm run build && electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "copyfiles": "^2.4.1",
+    "electron": "^44.7.1",
+    "typescript": "^7.0.2"
+  }
+}
