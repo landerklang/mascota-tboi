@@ -5,8 +5,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="pet">
-      <img src="./imagenes/gif.gif" alt="azal" draggable="false" />
+    <div id="app-container">
+      <div id="pet">
+        <img src="imagenes/gif.gif" alt="azal" draggable="false" id="pet-img" />
+      </div>
+
+      <!-- La Hub (Ahora solo tendrá botones de acciones, no de redimensionar) -->
+      <div id="hub" class="hidden">
+        <!-- Aquí podrías poner a futuro: <button title="Cerrar">❌</button> -->
+      </div>
+
+      <!-- El cuadro de selección al estilo Paint -->
+      <div id="selection-box" class="hidden">
+        <div class="handle top-left" data-dir="tl"></div>
+        <div class="handle top-right" data-dir="tr"></div>
+        <div class="handle bottom-left" data-dir="bl"></div>
+        <div class="handle bottom-right" data-dir="br"></div>
+      </div>
     </div>
     <script src="renderer.js"></script>
   </body>

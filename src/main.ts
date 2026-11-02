@@ -7,12 +7,12 @@ let dragOffset = { x: 0, y: 0 };
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 200,
-    height: 200,
+    width: 100,
+    height: 100,
     transparent: true,
     frame: false, // sin bordes
     alwaysOnTop: true, // siempre encima
-    resizable: false,
+    resizable: true,
     skipTaskbar: true, // no aparece en la barra de tareas
     hasShadow: false,
     webPreferences: {
@@ -25,6 +25,24 @@ function createWindow() {
   win.loadFile(path.join(__dirname, "renderer/index.html"));
 
   // win.webContents.openDevTools({ mode: "detach" });
+
+  // Escucha cuando el renderer pide cambiar el tamaño de la ventana
+  ipcMain.on(
+    "resize-window",
+    (
+      _event,
+      bounds: { x: number; y: number; width: number; height: number },
+    ) => {
+      if (!win) return;
+      // setBounds actualiza posición y tamaño a la vez
+      win.setBounds({
+        x: Math.round(bounds.x),
+        y: Math.round(bounds.y),
+        width: Math.round(bounds.width),
+        height: Math.round(bounds.height),
+      });
+    },
+  );
 
   // Escucha cuando el renderer pide empezar el arrastre
   ipcMain.on("drag-start", () => {
