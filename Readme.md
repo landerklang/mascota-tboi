@@ -5,7 +5,11 @@ una mascota virtual de los personajes de the binding of isaac
 
 ## Como iniciar
 
+<!-- Intalar dependencia  -->
+
 -npm i
+
+<!-- iniciar programa -->
 
 -npm start
 
@@ -15,6 +19,13 @@ no se olvide de revizar que el archivo html indique correctamente al archivo que
 Version 1.0
 
 Esta es la primera version del proyecto el personaje se puede mover al arrastrar a la mascotas
+
+## Herramientas utilizadas
+
+-**Electron**:Para crear la ventana transparente y sin bordes.
+
+- **TypeScript**: Para un desarrollo más seguro y tipado.
+- **Node.js (fs, path)**: Para scripts de construcción (build).
 
 ## version actual
 
