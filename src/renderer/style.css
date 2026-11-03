@@ -120,3 +120,21 @@ body {
   right: -6px;
   cursor: nwse-resize;
 }
+
+#btn-close {
+  top: 1px; /* Lo ponemos en la esquina superior... */
+  right: 1px; /* ...derecha */
+  background: rgba(255, 50, 50, 0.8) !important; /* Rojo */
+  border-color: #ffaaaa !important;
+  font-size: 16px !important;
+  transform: none !important; /* Quitamos el centrado que tenían los otros botones */
+}
+
+#btn-close:hover {
+  background: rgba(
+    255,
+    0,
+    0,
+    1
+  ) !important; /* Rojo más intenso al pasar el ratón */
+}

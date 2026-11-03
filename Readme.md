@@ -34,3 +34,4 @@ Esta es la primera version del proyecto el personaje se puede mover al arrastrar
 actualmente es azazel el unico que baila
 puede mover a la mascota y esta unicamente se encarga de bailar
 Puedes cambiar el tamaño de las mascota al seleccionar
+boton para cerrar la aplicacion

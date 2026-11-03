@@ -9,4 +9,5 @@ contextBridge.exposeInMainWorld("petAPI", {
     width: number;
     height: number;
   }) => ipcRenderer.send("resize-window", bounds),
+  closeApp: () => ipcRenderer.send("close-app"), // <-- NUEVO
 });

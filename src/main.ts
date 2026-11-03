@@ -71,6 +71,13 @@ function createWindow() {
   });
 }
 
+// Escucha cuando el renderer pide cerrar la aplicación
+ipcMain.on("close-app", () => {
+  if (win) {
+    win.close(); // Cierra la ventana de forma segura
+  }
+});
+
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {

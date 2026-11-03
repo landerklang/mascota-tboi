@@ -4,6 +4,8 @@
   const pet = document.getElementById("pet")!;
   const hub = document.getElementById("hub")!;
   const selectionBox = document.getElementById("selection-box")!;
+  // ... (tus variables anteriores)
+  const btnClose = document.getElementById("btn-close")!; // <-- Añade esto
 
   let isDragging = false;
   let isResizing = false;
@@ -34,6 +36,12 @@
     if (!hub.classList.contains("hidden")) return;
 
     api.startDrag();
+  });
+
+  // --- Lógica del botón de cerrar ---
+  btnClose.addEventListener("click", (e) => {
+    e.stopPropagation(); // Evita que el clic se propague al fondo
+    api.closeApp(); // Llama a Electron para cerrar
   });
 
   window.addEventListener("mousemove", (e) => {
