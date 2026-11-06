@@ -5,7 +5,8 @@
   const hub = document.getElementById("hub")!;
   const selectionBox = document.getElementById("selection-box")!;
   // ... (tus variables anteriores)
-  const btnClose = document.getElementById("btn-close")!; // <-- Añade esto
+  const btnClose = document.getElementById("btn-close")!;
+  const btnMinimize = document.getElementById("btn-minimize")!;
 
   let isDragging = false;
   let isResizing = false;
@@ -42,6 +43,11 @@
   btnClose.addEventListener("click", (e) => {
     e.stopPropagation(); // Evita que el clic se propague al fondo
     api.closeApp(); // Llama a Electron para cerrar
+  });
+
+  btnMinimize.addEventListener("click", (e) => {
+    e.stopPropagation();
+    api.minimizeToTray(); // Llama a la función del preload
   });
 
   window.addEventListener("mousemove", (e) => {

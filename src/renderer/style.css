@@ -138,3 +138,18 @@ body {
     1
   ) !important; /* Rojo más intenso al pasar el ratón */
 }
+
+#btn-minimize {
+  top: 10px;
+  right: 40px; /* Lo ponemos a la izquierda del botón de cerrar */
+  background: rgba(80, 80, 80, 0.8) !important; /* Gris oscuro */
+  border-color: #aaa !important;
+  font-size: 20px !important;
+  font-weight: bold;
+  padding-bottom: 5px; /* Para centrar el guion bajo */
+  transform: none !important;
+}
+
+#btn-minimize:hover {
+  background: rgba(120, 120, 120, 1) !important;
+}
